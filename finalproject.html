@@ -10,13 +10,18 @@ function choose() {
 
 var school = document.getElementById("choice");
 var gpa = document.getElementById("grades")
+var major = document.getElementById("interest").value
 
 var one = parseFloat(gpa.value)
 
-if(one >= 3.5) {
-school.innerHTML = "<a href='https://www.dillard.edu'>Dillard University</a>"}
+if(one >= 3.5 && major == "Business") {
+school.innerHTML = "<a href='https://www.dillard.edu'>Dillard University</a>"
+school.innerHTML += "<br>"
+school.innerHTML += "Howard University"
+}
 else {
 school.innerHTML = "Xavier University"
+school.innerHTML += "<br>"
 school.innerHTML += "Texas Southern University"
 
 
@@ -54,4 +59,3 @@ majors based on your goals and interests.</p>
 </body>
 
 </html>
-
