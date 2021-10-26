@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script> 
+
+function collegeChoice() {
+choose();
+}
+function choose() {
+
+var school = document.getElementById("choice");
+var gpa = document.getElementById("grades")
+
+var one = parseFloat(gpa.value)
+
+if(one >= 3.5) {
+school.innerHTML = "<a href='https://www.dillard.edu'>Dillard University</a>"}
+else {
+school.innerHTML = ("Xavier University")}
+
+
+}
+</script>
+
+
+
+
+</head>
+<body>
+<h2>What college/university should I attend?</h2>
+<p>We're so glad that you're seeking out help in choosing the right college/university for you!
+Answer this brief questionnaire, then click "See Schools" to retrieve a list of schools that offer 
+majors based on your goals and interests.</p>
+<p>My intended major is closest related to </p>
+
+<h3>What is your current GPA </h3>
+<input id="grades">
+
+
+
+
+<button id="my-btn" onclick="collegeChoice()">See Schools</button>
+<div id="choice"></div>
+</body>
+
+</html>
+
