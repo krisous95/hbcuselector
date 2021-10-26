@@ -16,7 +16,11 @@ var one = parseFloat(gpa.value)
 if(one >= 3.5) {
 school.innerHTML = "<a href='https://www.dillard.edu'>Dillard University</a>"}
 else {
-school.innerHTML = ("Xavier University")}
+school.innerHTML = "Xavier University"
+school.innerHTML += "Texas Southern University"
+
+
+}
 
 
 }
@@ -35,8 +39,14 @@ majors based on your goals and interests.</p>
 
 <h3>What is your current GPA </h3>
 <input id="grades">
-
-
+  
+<h3>Of the options provided, what major is most appealing? </h3>
+<select name="interest" id="interest">
+  <option value="STEM">STEM</option>
+  <option value="Business">Business</option>
+  <option value="Liberal Arts">Liberal Arts</option>
+  <option value="Political Science">Political Science</option>
+</select>
 
 
 <button id="my-btn" onclick="collegeChoice()">See Schools</button>
