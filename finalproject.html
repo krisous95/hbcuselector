@@ -1,61 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.choices {font-size: 18px;}
+</style>
+<script>
+function dropdownChange() {
+var theList = document.getElementById("list");
+var secondList = document.getElementById("listone");
+var thirdList = document.getElementById("listtwo");
+var fourthList = document.getElementById("listthree");
+var fifthList = document.getElementById("listfour");
+var theMajor = document.getElementById("major").value;
+var theExtra = document.getElementById("extra").value;
+var theClassroom = document.getElementById("classroom").value;
+var theGrades = document.getElementById("grades").value
 
-function collegeChoice() {
-choose();
+console.log(theMajor + theExtra + theClassroom)
+if(theMajor === "business" && theExtra === "academicclubs" && theClassroom === "small" && theGrades === "good" || theGrades === "high" || theGrades === "fair") {
+theList.innerHTML = "<a href='https://www.dillard.edu'>Dillard University</a>"
+secondList.innerHTML = "<a href='https://www.xula.edu'>Xavier University of Louisiana</a>"
+thirdList.innerHTML = "<a href='https://www.subr.edu'>Southern University and A&M College</a>"
+fourthList.innerHTML = "<a href='https://www.morehouse.edu'>Morehouse College</a>"
+fifthList.innerHTML = "<a href='https://www.miles.edu'>Miles College</a>"
+} else if(theMajor === "stem" && theExtra === "frat" && theClassroom === "large" && theGrades === "good" || theGrades === "high" || theGrades === "fair") {
+theList.innerHTML = "<a href='https://www.famu.edu'>Florida A&M University</a>"
+secondList.innerHTML = "<a href='https://www.cau.edu'>Clark Atlanta University</a>"
+thirdList.innerHTML = "<a href='https://www.howard.edu'>Howard University</a>"
+fourthList.innerHTML = "<a href='https://www.ncat.edu'>North Carolina A&T State University</a>"
+fifthList.innerHTML = "<a href='https://www.morgan.edu'>Morgan State University</a>"
+}else {
+theList.innerHTML = "<a href='https://www.usnews.com/best-colleges/rankings/hbcu'>Check Out This List</a>"
+secondList.innerHTML = null
+thirdList.innerHTML = null
+fourthList.innerHTML = null
+fifthList.innerHTML = null
 }
-function choose() {
-
-var school = document.getElementById("choice");
-var gpa = document.getElementById("grades")
-var major = document.getElementById("interest").value
-
-var one = parseFloat(gpa.value)
-
-if(one >= 3.5 && major == "Business") {
-school.innerHTML = "<a href='https://www.dillard.edu'>Dillard University</a>"
-school.innerHTML += "<br>"
-school.innerHTML += "Howard University"
-}
-else {
-school.innerHTML = "Xavier University"
-school.innerHTML += "<br>"
-school.innerHTML += "Texas Southern University"
-
-
 }
 
-
-}
 </script>
-
-
-
-
 </head>
 <body>
-<h2>What college/university should I attend?</h2>
 <p>We're so glad that you're seeking out help in choosing the right college/university for you!
 Answer this brief questionnaire, then click "See Schools" to retrieve a list of schools that offer 
 majors based on your goals and interests.</p>
-<p>My intended major is closest related to </p>
-
-<h3>What is your current GPA </h3>
-<input id="grades">
-  
-<h3>Of the options provided, what major is most appealing? </h3>
-<select name="interest" id="interest">
-  <option value="STEM">STEM</option>
-  <option value="Business">Business</option>
-  <option value="Liberal Arts">Liberal Arts</option>
-  <option value="Political Science">Political Science</option>
+<p class="choices">My intended major is closest related to </p>
+<select id="major" onchange="dropdownChange()">
+<option value="business">Business</option>
+<option value="stem">STEM</option>
+<option value="arts">Liberal Arts</option>
+<option value="undecided">Undecided</option>
 </select>
-
-
-<button id="my-btn" onclick="collegeChoice()">See Schools</button>
-<div id="choice"></div>
+<br>
+<p class="choices">Regarding extracurricular activities, I'm most interested in: </p>
+<select id="extra" onchange="dropdownChange()">
+<option value="sports">Sports</option>
+<option value="frat">Fraternities/Sororities</option>
+<option value="academicclubs">Academic Clubs</option>
+<option value="undecided">Undecided</option>
+</select>
+<br>
+<p class="choices">My preferred class size is:</p>
+<select id="classroom" onchange="dropdownChange()">
+<option value="small">Small</option>
+<option value="med">Medium</option>
+<option value="large">Large</option>
+<option value="undecided">Undecided</option>
+</select>
+<br>
+<p class="choices">My current GPA is:</p>
+<select id="grades" onchange="dropdownChange()">
+<option value="fair">2.75 to 3.0</option>
+<option value="good">3.01-3.49</option>
+<option value="high">3.5 and above</option>
+<option value="undecided">Undecided</option>
+</select>
+<br>
+<p class="choices">Based on your selections, here are some recommended schools:</p>
+<div id="list"></div>
+<div id="listone"></div>
+<div id="listtwo"></div>
+<div id="listthree"></div>
+<div id="listfour"></div>
 </body>
-
 </html>
